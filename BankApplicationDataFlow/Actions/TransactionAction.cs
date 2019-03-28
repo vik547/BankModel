@@ -67,13 +67,12 @@ namespace BankApplicationDataFlow.Actions
                 case TransactionInfoMessage.TransactionOperation.Transaction:
                     {
                         int newBalance = m.Account.CurrentBalance + (m.TransactionInfo.TransactionType == TransactionType.Credit ? m.TransactionInfo.Value : (-1 * m.TransactionInfo.Value));
-                        // if (0 <= newBalance)
-                        
-                            var am = new AccountMessage { Account = m.Account, MessageType = AccountMessage.AccountMessageType.UpdateBalance };
-                            
-                            am.Account.UpdateBalance(m.TransactionInfo.TransactionType == TransactionType.Credit ? m.TransactionInfo.Value : (-1 * m.TransactionInfo.Value));
+                                                
+                            var account = m.Account;
 
-                            AccountOperation ao = new AccountOperation() { Account = am.Account, OperationType = OperationType.UpdateBalance };
+                             account.CurrentBalance = newBalance;
+
+                            AccountOperation ao = new AccountOperation() { Account = account, OperationType = OperationType.UpdateBalance };
                             AccountOperationAction.AccountOperation.SendSync(ao);
 
                             

@@ -42,7 +42,7 @@ namespace BankApplicationDataFlow.Actions
             return null;
         }
 
-        public  Message ProcessMessageSync(Message message)
+        public Message ProcessMessageSync(Message message)
         {
             var m = message as AccountMessage;
             switch (m.MessageType)
@@ -50,7 +50,7 @@ namespace BankApplicationDataFlow.Actions
                 case AccountMessage.AccountMessageType.AddAccount:
                     {
                         account = m.Account;
-                       OutputAction.Action.Send(new Output() { Message = string.Format("Account with Name {0} is active, Account ID : {1}", account.Name, account.Id) });
+                        OutputAction.Action.Send(new Output() { Message = string.Format("Account with Name {0} is active, Account ID : {1}", account.Name, account.Id) });
                     }
                     return new AccountMessage() { Account = account };
                 default:
@@ -58,6 +58,6 @@ namespace BankApplicationDataFlow.Actions
             }
             return null;
         }
-      
+
     }
 }

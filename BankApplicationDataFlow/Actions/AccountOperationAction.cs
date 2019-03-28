@@ -78,7 +78,6 @@ namespace BankApplicationDataFlow.Actions
                     }
                     break;
                 case OperationType.UpdateBalance:
-                  //  activeAccounts[accountOperation.Account.Id].AccountAction.SendSync(new AccountMessage() { Account = accountOperation.Account, MessageType = AccountMessage.AccountMessageType.UpdateBalance });
                     activeAccounts[accountOperation.Account.Id].AccountAction.Send(new AccountMessage() { Account = accountOperation.Account, MessageType = AccountMessage.AccountMessageType.UpdateBalance });
                     break;
                 default:

@@ -14,7 +14,6 @@ namespace BankApplicationDataFlow.Messages
         public enum AccountMessageType
         {
             NewAccount,
-            CheckAccountExists,
             GetAccountInfo,
             AddAccount,
             UpdateBalance,

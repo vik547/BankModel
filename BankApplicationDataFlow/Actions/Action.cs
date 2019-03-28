@@ -7,10 +7,11 @@ public abstract class Action
     private ConcurrentExclusiveSchedulerPair cesp = new ConcurrentExclusiveSchedulerPair(TaskScheduler.Default);
 
     public ActionBlock<Message> _action;
-    public ActionBlock<Message> _actionSync;
+    private ActionBlock<Message> _action;
+    private ActionBlock<Message> _actionSync;
 
-    public TransformBlock<Message, Message> _transform;
-    public TransformBlock<Message, Message> _transformSync;
+    private TransformBlock<Message, Message> _transform;
+    private TransformBlock<Message, Message> _transformSync;
 
     public Action()
     {
