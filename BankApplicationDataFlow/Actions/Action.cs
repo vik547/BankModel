@@ -6,7 +6,6 @@ public abstract class Action
 {
     private ConcurrentExclusiveSchedulerPair cesp = new ConcurrentExclusiveSchedulerPair(TaskScheduler.Default);
 
-    public ActionBlock<Message> _action;
     private ActionBlock<Message> _action;
     private ActionBlock<Message> _actionSync;
 

@@ -33,5 +33,7 @@ Actions :-
 		Transactions is always called using Exclusive scheduler.
 	AccountOperations :- Denotes a front of bank branch, where each account holder can act concurrenly.
 		All actions are scheduled on concurrent scheduler of AccountOperation object.
+	OutputAction :-  To print any string on console.
+
 
 
